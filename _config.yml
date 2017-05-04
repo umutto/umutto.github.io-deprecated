@@ -2,3 +2,5 @@ name: Umut Karakulak - Coding Blog
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
 comments: true
+gems:
+  - jekyll-sitemap
