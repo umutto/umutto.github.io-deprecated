@@ -206,6 +206,6 @@ Finally, we can see how these algorithms really act on real life surfaces using 
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/umutto/umutto.github.io/master/static/images/blog_1_hill_climb/srtm_42_04_fig_4.gif" alt="Steps in real world surface."  width="600"/>  
-  </br>
+  <br />
   <sup><i>Steps in real world surface.</i></sup>
 </p> 
