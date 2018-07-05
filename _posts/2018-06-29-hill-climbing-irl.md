@@ -16,7 +16,7 @@ Deciding a step is whether an improvement or not is done by the cost function. U
 Now, this is where blind man climbing a hill analogy comes into place. Since the results of a cost function can be represented in hills and valleys, finding the optimal solution (the one gives good results for the given cost function) is very similar to climbing a mountainous field.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/umutto/umutto.github.io/master/static/images/blog_1_hill_climb/loss_function_space_fig_1.png" alt="loss function"  width="600"/>  
+  <img src="https://raw.githubusercontent.com/umutto/umutto.github.io/master/static/images/blog_1_hill_climb/loss_function_space_fig_1.jpg" alt="loss function"  width="600"/>  
   </br>
   <sup><i>An example loss function.</i></sup>
 </p>  
