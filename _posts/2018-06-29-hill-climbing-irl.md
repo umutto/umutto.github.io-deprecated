@@ -17,7 +17,7 @@ Now, this is where blind man climbing a hill analogy comes into place. Since the
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/umutto/umutto.github.io/master/static/images/blog_1_hill_climb/loss_function_space_fig_1.jpg" alt="loss function"  width="600"/>  
-  </br>
+  <br />
   <sup><i>An example loss function.</i></sup>
 </p>  
 
@@ -65,7 +65,7 @@ This is the same as Momentum with a lookahead, instead of a previous step moment
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/umutto/umutto.github.io/master/static/images/blog_1_hill_climb/nesterov_vector_fig_2.jpeg" alt="Nesterov vector"  width="600"/>  
-  </br>
+  <br />
   <sup><i>Nesterov momentum vs momentum.</i></sup>
 </p>  
 
@@ -194,7 +194,7 @@ In `run.py`, the selected optimizers are run and are logged into a `.csv` like f
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/umutto/umutto.github.io/master/static/images/blog_1_hill_climb/cost_plot_fig_3.png" alt="Elevation per step graph."  width="600"/>  
-  </br>
+  <br />
   <sup><i>Elevation per step graph.</i></sup>
 </p>  
 
