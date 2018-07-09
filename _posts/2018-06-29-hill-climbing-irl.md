@@ -3,27 +3,27 @@ layout: post
 title: "Hill Climbing Algorithms (and gradient descent variants) IRL"
 date: 2018-06-29
 ---
-This blog post is going to be about, hill climbing algorithms and their common analogy (hill climbing duh...) including most used gradient descent algorithms. It is inspired by [Chris Foster](https://github.com/chrisfosterelli)'s [Executing gradient descent on the earth](https://fosterelli.co/executing-gradient-descent-on-the-earth) blog post. I've basically used the same structure and added new algorithms, refactored the code a bit for my understanding.  
+This blog post is going to be about hill climbing algorithms and their common analogy (hill climbing duh...) including most used gradient descent algorithms. You can find the [source code here](https://github.com/umutto/Hill-Climbing-IRL). It is inspired by [Chris Foster](https://github.com/chrisfosterelli)'s [Executing gradient descent on the earth](https://fosterelli.co/executing-gradient-descent-on-the-earth) blog post. I've basically used the same structure but added new algorithms and refactored the code a bit for my understanding.  
   
-# Introduction  
+## Introduction  
   
 This analogy of a blind man going down the hill (finding minima) or blind man climbing a hill (finding maxima) is commonly used to give a better understanding of optimization algorithms. From this point, I will use maxima (climbing), but it is really easy to convert one model to other.
 
-For starters, hill climbing optimization algorithms are iterative algorithms that start from an arbitrary solution(s) and incrementally try to make it better until no further improvements can be made or predetermined number of attempts been made. They usually follow a similar pattern of exploration-exploitation (intensification-diversification, selection-crossover-mutation etc..) using a cost function (or fitness function, optimization function etc..).
+For starters, hill climbing optimization algorithms are iterative algorithms that start from an arbitrary solution(s) and incrementally try to make it better until no further improvements can be made or predetermined number of attempts have been made. They usually follow a similar pattern of exploration-exploitation (intensification-diversification, selection-crossover-mutation etc..) using a cost function (or fitness function, optimization function etc..).
 
-Deciding a step is whether an improvement or not is done by the cost function. Usually if a step is giving a lower cost, it is deemed to be an improvement. But different algorithms may decide differently on whether to take that step or do something else as well as how to decide on a candidate list of steps.
+Deciding if a step is whether an improvement or not is done by the cost function. Usually if a step is giving a lower cost, it is deemed to be an improvement. But different algorithms may decide differently on whether to take that step or do something else as well as how to decide on a candidate list of steps.
 
 Now, this is where blind man climbing a hill analogy comes into place. Since the results of a cost function can be represented in hills and valleys, finding the optimal solution (the one gives good results for the given cost function) is very similar to climbing a mountainous field.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/umutto/umutto.github.io/master/static/images/blog_1_hill_climb/loss_function_space_fig_1.png" alt="loss function"  width="600"/>  
   </br>
-  <sup><i>An example loss function.</i></sup>
+  <sup><i>An example of losses in a solution space.</i></sup>
 </p>  
 
  The real life problems are usually very high dimensional so this gets really hard to imagine, but the basis is the same. So in theory, these algorithms should do equally good job of climbing on real life surfaces.
 
-# Project build up, defining the problem space
+## Project build up, defining the problem space
 
 For more information, you can check the [original blog post](https://fosterelli.co/executing-gradient-descent-on-the-earth) from Chris Foster. I'll not go into details here, just talk about the differences, since it is very well written there.
 
@@ -36,7 +36,7 @@ I've done that by not changing the algorithms but taking the inverse of the elev
         return self.get_elevation(lat, lon) * -1 + self.max_val
 ```
 
-# Optimizers
+## Optimizers
 
 Again, I will not go to details (there are tons of better tutorials online), but will try to give a general explanation to optimizers that I've used in this project.
 
@@ -51,7 +51,7 @@ This is the simplest form of parameter update using the gradients. It selects th
 
 ### Gradient Descent with Momentum
 
-This is similar to gradient descent with extra inspiration from momentum in physics. Intuitively it makes a lot of sense, if a boll is rolling towards a direction for a while, it should go faster on the next step.
+This is similar to gradient descent with extra inspiration from momentum in physics. Intuitively it makes a lot of sense, if a ball is rolling towards a direction for a while, it should go faster on the next step.
 
 ```python
     # velocity, starts from zero and kept (with some constant mu) from an earlier update
@@ -61,7 +61,7 @@ This is similar to gradient descent with extra inspiration from momentum in phys
 
 ### Gradient Descent with Nesterov Momentum
 
-This is the same as Momentum with a lookahead, instead of a previous step momentum is calculated using a future approximation. This is easier to understand by a vector graph.
+This is the same as Momentum with a lookahead, instead of a previous step, nesterov momentum is calculated using a future approximation. This is easier to understand by a vector graph.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/umutto/umutto.github.io/master/static/images/blog_1_hill_climb/nesterov_vector_fig_2.jpeg" alt="Nesterov vector"  width="600"/>  
@@ -69,7 +69,7 @@ This is the same as Momentum with a lookahead, instead of a previous step moment
   <sup><i>Nesterov momentum vs momentum.</i></sup>
 </p>  
 
-And implemented as:
+This results in more precise movements and implemented as:
 
 ```python
     v_prev = np.copy(velocity)
@@ -122,7 +122,7 @@ This is one of the most popular methods right now, and usually first choice for 
 ```
 
 ---
-So far, these have been gradient based algorithms. From here on, I've tried some of the more classical machine learning solutions.
+So far, these have been gradient based algorithms. From here on, I've tried some of the more classical artificial intelligence solutions.
 
 ### Stochastic hill climbing
 
@@ -188,9 +188,9 @@ And the algorithm is implemented as below. I've added the extra loop to give it 
     temp *= alpha
 ```
 
-# Results
+## Results
 
-In `run.py`, the selected optimizers are run and are logged into a `.csv` like file for every step they take and the elevations. For the location and parameters I've chosen for algorithms (location of my old university, and mostly original hyper-parameters from the papers). Elevation per step graph is as following.
+In `run.py`, the selected optimizers are run and are logged into a `.csv` like file for every step they take and the elevations. For the location and parameters I've chosen for algorithms `parameters.py` can be changed.(The defaults are; location of my old university, and mostly original hyper-parameters from the papers). Elevation per step graph is as following.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/umutto/umutto.github.io/master/static/images/blog_1_hill_climb/cost_plot_fig_3.png" alt="Elevation per step graph."  width="600"/>  
@@ -209,3 +209,8 @@ Finally, we can see how these algorithms really act on real life surfaces using 
   </br>
   <sup><i>Steps in real world surface.</i></sup>
 </p> 
+
+
+---
+
+This was a fun project and I think it can be a helpful way to give an intuitive understanding on how optimization works to students. The [code](https://github.com/umutto/Hill-Climbing-IRL) can be found on my [github repository](https://github.com/umutto/). I may have made couple of errors with the optimization algorithms or my other calculations. If you were to catch any of those, I would appreciate a pull request. Thank you!
