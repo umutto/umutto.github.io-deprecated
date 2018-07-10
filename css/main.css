@@ -17,12 +17,18 @@ nav ul li, footer ul li {
     margin-right: 20px;
 }
 a {
-    text-decoration: none;
-    color: #999;
-}
-a:hover {
-    text-decoration: underline;
-}
+    -moz-transition: color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out; }
+    a:hover {
+      text-decoration: none; }
+a {
+    color: #ce1b28; }
+
+strong, b {
+    color: #555555; }
+
 h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -37,13 +43,64 @@ footer {
     font-size: .8em;
 }
 
-ul.posts { 
-    margin: 20px auto 40px; 
+ul.posts {
+    margin: 20px auto 40px;
     font-size: 1.5em;
 }
 
 ul.posts li {
     list-style: none;
+}
+
+code {
+    overflow-wrap: break-word;
+    border-radius: 4px;
+    font-family: "Courier New", monospace;
+    font-size: 0.9rem;
+    margin: 0 0.1rem;
+    padding: 0.15rem 0.4rem; }
+
+  pre {
+    overflow-wrap: break-word;
+    overflow-x: auto;
+    overflow-y: hidden;
+    font-family: "Courier New", monospace;
+    font-size: 0.9rem;
+    margin: 0 0 2rem 0;
+    padding: 0.5rem 0.75rem; }
+    pre code {
+      display: block;
+      line-height: 1.75;
+      padding: 1rem 1.5rem;
+      overflow-x: auto; }
+
+blockquote {
+    border-left-color: rgba(0, 0, 0, 0.25); }
+
+code {
+    background: rgba(0, 0, 0, 0.075);
+    border-color: rgba(0, 0, 0, 0.25); }
+
+hr {
+    border-bottom-color: rgba(0, 0, 0, 0.25); }
+
+#btn_top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#btn_top:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
 }
 
 .hll { background-color: #ffffcc }

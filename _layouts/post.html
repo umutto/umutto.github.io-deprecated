@@ -5,12 +5,14 @@ layout: default
 <p class="meta">{{ page.date | date_to_string }}</p>
 
 <div class="post">
+  <button onclick="scrollWindow(0)" id="btn_top" title="Go to top">TOP</button>
   {{ content }}
+  <script src="/scripts/post.js></script>
 </div>
 
 <br><hr><br>
 
 <!-- Post comments -->
 <div class="notecomments">
-  {% include disqus.html %}	 
+  {% include disqus.html %}
 </div>
