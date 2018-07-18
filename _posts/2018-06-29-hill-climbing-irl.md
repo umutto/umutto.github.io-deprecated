@@ -7,7 +7,7 @@ This blog post is going to be about hill climbing algorithms and their common an
   
 ## Introduction  
   
-This analogy of a blind man going down the hill (finding minima) or blind man climbing a hill (finding maxima) is commonly used to give a better understanding of optimization algorithms. From this point, I will use maxima (climbing), but it is really easy to convert one model to other.
+This analogy of a blind man going down the hill (finding minima) or blind man climbing a hill (finding maxima) is commonly used to give a better understanding of optimization algorithms. From this point, I will use maxima (climbing), but it is really easy to convert one space to the other.
 
 For starters, hill climbing optimization algorithms are iterative algorithms that start from an arbitrary solution(s) and incrementally try to make it better until no further improvements can be made or predetermined number of attempts have been made. They usually follow a similar pattern of exploration-exploitation (intensification-diversification, selection-crossover-mutation etc..) using a cost function (or fitness function, optimization function etc..).
 
@@ -18,7 +18,7 @@ Now, this is where blind man climbing a hill analogy comes into place. Since the
 <p align="center">
   <img src="https://raw.githubusercontent.com/umutto/umutto.github.io/master/static/images/blog_1_hill_climb/loss_function_space_fig_1.jpg" alt="loss function"  width="600"/>  
   <br />
-  <sup><i>An example of losses in a solution space.</i></sup>
+  <sup><i>An example of loss values in a solution space.</i></sup>
 </p>  
 
  The real life problems are usually very high dimensional so this gets really hard to imagine, but the basis is the same. So in theory, these algorithms should do equally good job of climbing on real life surfaces.
@@ -27,7 +27,7 @@ Now, this is where blind man climbing a hill analogy comes into place. Since the
 
 For more information, you can check the [original blog post](https://fosterelli.co/executing-gradient-descent-on-the-earth) from Chris Foster. I'll not go into details here, just talk about the differences, since it is very well written there.
 
-Project uses NASA's [Shuttle Radar Topography Dataset](http://dwtkns.com/srtm/) to find out the elevation of a given coordinate. In the original blog post, the goal is to climb down to sea-level. This makes sense since it focuses on *gradient descent* and that is a minimizing solution. I've changed it to climb up a mountain, which in my mind translates better, and also since I was planning to work with other algorithms as well and found that it is more challenging to climb up in earth (reaching sea-level could be easy for an optimizer with large enough step size, since earth is full of sea... and full of global optima).
+Project uses NASA's [Shuttle Radar Topography Dataset](http://dwtkns.com/srtm/) to find out the elevation of a given coordinate. In the original blog post, the goal is to climb down to sea-level. This makes sense since it focuses on *gradient descent* and that is a minimizing solution. I've changed it to climb up a mountain, which in my mind translates better, and also since I was planning to work with other algorithms as well and found that it is more challenging to climb up in earth (reaching sea-level could be easy for an optimizer with large enough step size, since earth is full of sea... and sea level is a global optima...).
 
 I've done that by not changing the algorithms but taking the inverse of the elevation values (it is easier since I only have to do it in one part of the code). This can be seen on *rastermap.py* module.
 
