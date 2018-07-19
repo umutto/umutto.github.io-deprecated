@@ -59,11 +59,6 @@ from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
 ```
 
-    C:\Users\umut\AppData\Local\Continuum\Anaconda3\lib\site-packages\gensim\utils.py:860: UserWarning: detected Windows; aliasing chunkize to chunkize_serial
-      warnings.warn("detected Windows; aliasing chunkize to chunkize_serial")
-    Using TensorFlow backend.
-
-
 Let's take a casual look at the *variants* data.
 
 

@@ -3,7 +3,7 @@ layout: post
 title: "Hill Climbing Algorithms (and gradient descent variants) IRL"
 date: 2018-06-29
 ---
-This blog post is going to be about hill climbing algorithms and their common analogy (hill climbing duh...) including most used gradient descent algorithms. You can find the [source code here](https://github.com/umutto/Hill-Climbing-IRL). It is inspired by [Chris Foster](https://github.com/chrisfosterelli)'s [Executing gradient descent on the earth](https://fosterelli.co/executing-gradient-descent-on-the-earth) blog post. I've basically used the same structure but added new algorithms and refactored the code a bit for my understanding.  
+This blog post is going to be about hill climbing algorithms and their common analogy (hill climbing duh...) including most used gradient descent optimizers. You can find the [source code here](https://github.com/umutto/Hill-Climbing-IRL). It is inspired by [Chris Foster](https://github.com/chrisfosterelli)'s [Executing gradient descent on the earth](https://fosterelli.co/executing-gradient-descent-on-the-earth) blog post. I've basically used the same structure but added new algorithms and refactored the code a bit for my understanding.  
   
 ## Introduction  
   
