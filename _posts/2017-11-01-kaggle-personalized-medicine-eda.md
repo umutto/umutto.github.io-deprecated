@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Hill Climbing Algorithms (and gradient descent variants) IRL"
+title: "Kaggle Personalized Medicine EDA"
 date: 2017-11-01
 ---
 This repository contains a simple exploratory analysis for [Personalized Medicine: Redefining Cancer Treatment competition](https://www.kaggle.com/c/msk-redefining-cancer-treatment) in Kaggle. This post is a markdown version of [my kernel: preliminary data analysis using word2vec](https://www.kaggle.com/umutto/preliminary-data-analysis-using-word2vec) from kaggle. [Jupter nbconvert](https://github.com/jupyter/nbconvert) has been used for markdown conversion.
