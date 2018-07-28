@@ -78,7 +78,7 @@ while not converged and epoch <= epoch_limit:
 I've called this function with multiple points of interest (with varying hyper-parameters) and finally created a polygon of points. Finally draw an overall shape that covers all other polygons for prettier results using shapely library and created an (yeah not a pretty way to do things) html file that covers the google maps controls along the polygon projections. Which can be [seen here as a map](https://umutto.github.io/Transit_range_isochrone_mapping/isochrone_maps/sample.html), or in the image below. The image below shows a heatmap of points that are 45 minutes from Shibuya, 40 minutes from Ueno etc [(which can be seen in the source code)](https://github.com/umutto/Transit_range_isochrone_mapping/blob/master/tokyo_ischrones_google_maps.py#L332-L351)..
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/umutto/umutto.github.io/master/static/images/blog_0_transit_ranges/map_result.png" alt="Isochrone mapping results"  width="600"/>  
+  <img src="https://raw.githubusercontent.com/umutto/umutto.github.io/master/static/images/blog_0_transit_ranges/maps_result.png" alt="Isochrone mapping results"  width="600"/>  
   <br />
   <sup><i>Isochrone mapping results.</i></sup>
 </p>  
